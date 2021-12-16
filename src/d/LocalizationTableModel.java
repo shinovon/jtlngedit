@@ -18,7 +18,7 @@ public class LocalizationTableModel implements TableModel {
 	private static ArrayList<Integer> indexes;
 	static Map<Integer, String> map;
 	
-	public static int localei = 0;
+	public static int localei = 1;
 
 	LocalizationTableModel() {
 		Class lc = LocaleConstants.class;
@@ -89,6 +89,7 @@ public class LocalizationTableModel implements TableModel {
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		if(columnIndex == 0)
 			return;
+		map.put(rowIndex, (String) aValue);
 		values.set(rowIndex, (String) aValue);
 
 	}
