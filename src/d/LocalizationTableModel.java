@@ -18,7 +18,7 @@ public class LocalizationTableModel implements TableModel {
 	private static ArrayList<Integer> indexes;
 	static Map<Integer, String> map;
 	
-	public static int localei = 1;
+	public static int localei = 0;
 
 	LocalizationTableModel() {
 		Class lc = LocaleConstants.class;
