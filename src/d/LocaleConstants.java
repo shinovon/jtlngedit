@@ -1,6 +1,6 @@
 package d;
 
-// 467e300 @ r3-dev
+// e3b2abd @ r3-dev
 public interface LocaleConstants {
 	
 	public static final int CMD_Settings = 1;
