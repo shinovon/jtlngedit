@@ -89,7 +89,7 @@ public class LocalizationTableModel implements TableModel {
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		if(columnIndex == 0)
 			return;
-		map.put(rowIndex, (String) aValue);
+		map.put(indexes.get(rowIndex), (String) aValue);
 		values.set(rowIndex, (String) aValue);
 
 	}
