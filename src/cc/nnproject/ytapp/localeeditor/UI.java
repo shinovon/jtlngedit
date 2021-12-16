@@ -33,8 +33,8 @@ public class UI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("JTube Locale Editor v1.0.1 (for 1.4.0)");
-		frame.setBounds(100, 100, 600, 400);
+		frame.setTitle("JTube Locale Editor v1.0.2 (for 1.4.0)");
+		frame.setBounds(100, 100, 700, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -63,10 +63,17 @@ public class UI {
 		JButton btnLoad = new JButton("Load");
 		btnLoad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				model.load(UI.this);
+				model.load(UI.this, false);
 			}
 		});
 		panel.add(btnLoad);
+		JButton btnLoadv1 = new JButton("Load v1");
+		btnLoadv1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				model.load(UI.this, true);
+			}
+		});
+		//panel.add(btnLoadv1);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		frame.getContentPane().add(scrollPane, BorderLayout.CENTER);

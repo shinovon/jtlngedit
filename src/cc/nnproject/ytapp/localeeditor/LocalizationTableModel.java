@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.event.TableModelListener;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.table.TableModel;
@@ -34,13 +33,13 @@ public class LocalizationTableModel implements TableModel {
 		int i2 = 0;
 		for(Field f: lc.getFields()) {
 			String n = f.getName();
-			keys.add(n);
 			int c = -1;
 			try {
 				c = f.getInt(null);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			keys.add(n);
 			indexes.add(c);
 			map.put(c, s(c));
 			i2++;
@@ -91,8 +90,8 @@ public class LocalizationTableModel implements TableModel {
 		map.put(indexes.get(rowIndex), (String) aValue);
 	}
 
-	public void load(UI ui) {
-		JFileChooser fc = new JFileChooser();
+	public void load(UI ui, boolean b) {
+		JFileChooser fc = new JFileChooser(".");
 		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		fc.setFileFilter(new FileFilter() {
 			public boolean accept(File f) {
@@ -116,10 +115,17 @@ public class LocalizationTableModel implements TableModel {
 			ui.idField.setText(f.getName().substring("jtlng.".length()));
 			try {
 				int i;
+				boolean a = false;
 				while( (i = d.readShort()) != -1) {
 					String s = d.readUTF();
-					if(i == 0) ui.authorField.setText(s);
-					map.put(new Integer(i), s);
+					if(i == 0 && !a) {
+						ui.authorField.setText(s);
+						a = true;
+						continue;
+					}
+					if(i == 0) continue;
+					if(b) map.put(i, s);
+					else map.put(i, s);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

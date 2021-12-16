@@ -11,17 +11,6 @@ public class LangBuilder {
 	
 	public static void main(String[] args) {
 		Class lc = LocaleConstants.class;
-    	try {
-    		for(Field f: lc.getFields()) {
-    			String n = f.getName();
-				int i = f.getInt(null);
-				System.out.print(n +"," + i + "=" + LocalizationTableModel.s(i) + ";");
-        	}
-		} catch (Exception e) {
-			System.out.println();
-			e.printStackTrace();
-		}
-        System.out.println();
         Scanner in = new Scanner(System.in);
         System.out.print("Locale identificator: ");
         String lang = in.nextLine();
@@ -53,6 +42,7 @@ public class LangBuilder {
 			os.writeShort(0);
 			os.writeUTF(author);
 			for(Entry<Integer, String> entry: map.entrySet()) {
+				System.out.println(entry.getKey() + "=" + entry.getValue());
 				os.writeShort(entry.getKey().intValue());
 				os.writeUTF(entry.getValue());
 			}

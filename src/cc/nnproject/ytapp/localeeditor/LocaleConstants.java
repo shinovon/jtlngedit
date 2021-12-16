@@ -1,6 +1,5 @@
 package cc.nnproject.ytapp.localeeditor;
 
-// e3b2abd @ r3-dev
 public interface LocaleConstants {
 	
 	public static final int CMD_Settings = 1;
