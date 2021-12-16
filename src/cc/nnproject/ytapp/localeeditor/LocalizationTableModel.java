@@ -2,19 +2,25 @@ package cc.nnproject.ytapp.localeeditor;
 
 import static cc.nnproject.ytapp.localeeditor.LocaleConstants.*;
 
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.event.TableModelListener;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.table.TableModel;
 
 public class LocalizationTableModel implements TableModel {
 	
 	private static int size;
 	private static ArrayList<String> keys;
-	private static ArrayList<String> values;
 	private static ArrayList<Integer> indexes;
 	static Map<Integer, String> map;
 	
@@ -24,7 +30,6 @@ public class LocalizationTableModel implements TableModel {
 		Class lc = LocaleConstants.class;
 		map = new HashMap<Integer, String>();
 		keys = new ArrayList<String>();
-		values = new ArrayList<String>();
 		indexes = new ArrayList<Integer>();
 		int i2 = 0;
 		for(Field f: lc.getFields()) {
@@ -37,13 +42,10 @@ public class LocalizationTableModel implements TableModel {
 				e.printStackTrace();
 			}
 			indexes.add(c);
-			values.add(s(c));
+			map.put(c, s(c));
 			i2++;
 		}
 		size = i2;
-		for(int i = 0; i < i2; i++) {
-			map.put(i, values.get(i));
-		}
 	}
 
 	public void addTableModelListener(TableModelListener arg0) {}
@@ -68,7 +70,7 @@ public class LocalizationTableModel implements TableModel {
 		if(columnIndex == 0) {
 			return keys.get(rowIndex);
 		} else {
-			return values.get(rowIndex);
+			return map.get(indexes.get(rowIndex));
 		}
 		
 	}
@@ -87,8 +89,95 @@ public class LocalizationTableModel implements TableModel {
 		if(columnIndex == 0)
 			return;
 		map.put(indexes.get(rowIndex), (String) aValue);
-		values.set(rowIndex, (String) aValue);
+	}
 
+	public void load(UI ui) {
+		JFileChooser fc = new JFileChooser();
+		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		fc.setFileFilter(new FileFilter() {
+			public boolean accept(File f) {
+		        return f.isDirectory() || f.getName().startsWith("jtlng.");
+		    }
+
+			public String getDescription() {
+				return "User localization files";
+			}
+		});
+		int c = fc.showOpenDialog(ui.frame);
+		if(c == JFileChooser.CANCEL_OPTION) {
+			return;
+		}
+
+		try {
+			File f = fc.getSelectedFile();
+			
+			FileInputStream is = new FileInputStream(f);
+			DataInputStream d = new DataInputStream(is);
+			ui.idField.setText(f.getName().substring("jtlng.".length()));
+			try {
+				int i;
+				while( (i = d.readShort()) != -1) {
+					String s = d.readUTF();
+					if(i == 0) ui.authorField.setText(s);
+					map.put(new Integer(i), s);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				d.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		ui.table.setModel(new TableModel() {
+
+			public void addTableModelListener(TableModelListener arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public Class<?> getColumnClass(int arg0) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			public int getColumnCount() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+
+			public String getColumnName(int arg0) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			public int getRowCount() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+
+			public Object getValueAt(int arg0, int arg1) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			public boolean isCellEditable(int arg0, int arg1) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+
+			public void removeTableModelListener(TableModelListener arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public void setValueAt(Object arg0, int arg1, int arg2) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		ui.table.setModel(this);
 	}
 	
 	public static String s(int c) {

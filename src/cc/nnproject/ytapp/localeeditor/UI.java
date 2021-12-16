@@ -16,6 +16,10 @@ import java.awt.FlowLayout;
 public class UI {
 
 	JFrame frame;
+	JTextField idField;
+	JTextField authorField;
+	JTable table;
+	private LocalizationTableModel model;
 
 	/**
 	 * Create the application.
@@ -29,8 +33,8 @@ public class UI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("JTube Locale Editor v1.0 (for 1.4.0)");
-		frame.setBounds(100, 100, 500, 300);
+		frame.setTitle("JTube Locale Editor v1.0.1 (for 1.4.0)");
+		frame.setBounds(100, 100, 600, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -39,13 +43,13 @@ public class UI {
 		
 		panel.add(new JLabel("Locale identificator:"));
 		
-		final JTextField idField = new JTextField("en");
+		idField = new JTextField("en");
 		panel.add(idField);
 		idField.setColumns(10);
 		
 		panel.add(new JLabel("Author:"));
 		
-		final JTextField authorField = new JTextField("me");
+		authorField = new JTextField("me");
 		panel.add(authorField);
 		authorField.setColumns(10);
 		
@@ -56,11 +60,18 @@ public class UI {
 			}
 		});
 		panel.add(btnNewButton);
+		JButton btnLoad = new JButton("Load");
+		btnLoad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				model.load(UI.this);
+			}
+		});
+		panel.add(btnLoad);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
-		JTable table = new JTable(new LocalizationTableModel());
+		table = new JTable(model = new LocalizationTableModel());
 		scrollPane.setViewportView(table);
 	}
 
