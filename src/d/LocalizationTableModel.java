@@ -17,6 +17,8 @@ public class LocalizationTableModel implements TableModel {
 	private static ArrayList<String> values;
 	private static ArrayList<Integer> indexes;
 	static Map<Integer, String> map;
+	
+	public static int localei = 0;
 
 	LocalizationTableModel() {
 		Class lc = LocaleConstants.class;
@@ -35,170 +37,7 @@ public class LocalizationTableModel implements TableModel {
 				e.printStackTrace();
 			}
 			indexes.add(c);
-			switch(c) {
-			case CMD_Settings:
-				values.add("Settings");
-				break;
-			case CMD_Search:
-				values.add("Search");
-				break;
-			case CMD_OK:
-				values.add("OK");
-				break;
-			case CMD_Cancel:
-				values.add("Cancel");
-				break;
-			case CMD_Back:
-				values.add("Back");
-				break;
-			case CMD_Exit:
-				values.add("Exit");
-				break;
-			case CMD_Apply:
-				values.add("Apply");
-				break;
-			case CMD_Go:
-				values.add("Go");
-				break;
-			case CMD_View:
-				values.add("View");
-				break;
-			case CMD_Watch:
-				values.add("Watch");
-				break;
-			case CMD_Download:
-				values.add("Download");
-				break;
-			case CMD_OpenByID:
-				values.add("Open by ID");
-				break;
-			case CMD_Open:
-				values.add("Open");
-				break;
-			case CMD_Videos:
-				values.add("Videos");
-				break;
-			case CMD_ViewChannel:
-				values.add("View channel");
-				break;
-			case CMD_SwitchToPopular:
-				values.add("Switch to popular");
-				break;
-			case CMD_SwitchToTrends:
-				values.add("Switch to trends");
-				break;
-			case SET_VideoRes:
-				values.add("Preferred video quality");
-				break;
-			case SET_Appearance:
-				values.add("Appearance");
-				break;
-			case SET_OtherSettings:
-				values.add("");
-				break;
-			case SET_DownloadDir:
-				values.add("Download directory");
-				break;
-			case SET_InvAPI:
-				values.add("Invidious API Instance");
-				break;
-			case SET_StreamProxy:
-				values.add("Stream proxy server");
-				break;
-			case SET_ImagesProxy:
-				values.add("Images proxy prefix");
-				break;
-			case SET_CountryCode:
-				values.add("Country code (ISO 3166)");
-				break;
-			case TITLE_Trends:
-				values.add("Trending");
-				break;
-			case TITLE_Popular:
-				values.add("Popular");
-				break;
-			case TITLE_SearchQuery:
-				values.add("Search query");
-				break;
-			case TITLE_Settings:
-				values.add("Settings");
-				break;
-			case BTN_LatestVideos:
-				values.add("Latest videos");
-				break;
-			case BTN_SearchVideos:
-				values.add("Search videos");
-				break;
-			case TITLE_Loading:
-				values.add("Loading");
-				break;
-			case TXT_Views:
-				values.add("Views");
-				break;
-			case TXT_LikesDislikes:
-				values.add("Likes / Dislikes");
-				break;
-			case TXT_Published:
-				values.add("Published");
-				break;
-			case TXT_Description:
-				values.add("Description");
-				break;
-			case BTN_ChannelInformation:
-				values.add("Information");
-				break;
-			case TXT_Connecting:
-				values.add("Connecting");
-				break;
-			case TXT_Waiting:
-				values.add("Error! Waiting for retry...");
-				break;
-			case TXT_ConnectionRetry:
-				values.add("Connection retry");
-				break;
-			case TXT_Redirected:
-				values.add("Redirected");
-				break;
-			case TXT_Connected:
-				values.add("Connected");
-				break;
-			case TXT_Downloading:
-				values.add("Downloading");
-				break;
-			case TXT_Downloaded:
-				values.add("Downloaded");
-				break;
-			case TXT_Canceled:
-				values.add("Canceled");
-				break;
-			case TXT_DownloadFailed:
-				values.add("Download failed");
-				break;
-			case TXT_Initializing:
-				values.add("Initializing");
-				break;
-			case TXT_Done:
-				values.add("Done");
-				break;
-			case CMD_About:
-				values.add("About");
-				break;
-			case CMD_Select:
-				values.add("Select");
-				break;
-			case CMD_OpenPlaylist:
-				values.add("Open playlist");
-				break;
-			case CMD_Next:
-				values.add("Next video");
-				break;
-			case CMD_Prev:
-				values.add("Prev. video");
-				break;
-			default:
-				values.add("");
-				break;
-			}
+			values.add(s(c));
 			i2++;
 		}
 		size = i2;
@@ -245,8 +84,6 @@ public class LocalizationTableModel implements TableModel {
 	}
 
 	public void removeTableModelListener(TableModelListener arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
@@ -254,6 +91,259 @@ public class LocalizationTableModel implements TableModel {
 			return;
 		values.set(rowIndex, (String) aValue);
 
+	}
+	
+
+	
+	public static String s(int c) {
+		switch(localei) {
+		case 0: {
+			switch(c) {
+			case CMD_Settings:
+				return "Settings";
+			case CMD_Search:
+				return "Search";
+			case CMD_OK:
+				return "OK";
+			case CMD_Cancel:
+				return "Cancel";
+			case CMD_Back:
+				return "Back";
+			case CMD_Exit:
+				return "Exit";
+			case CMD_Apply:
+				return "Apply";
+			case CMD_Go:
+				return "Go";
+			case CMD_View:
+				return "View";
+			case CMD_Watch:
+				return "Watch";
+			case CMD_Download:
+				return "Download";
+			case CMD_OpenByID:
+				return "Open by ID";
+			case CMD_Open:
+				return "Open";
+			case CMD_Videos:
+				return "Videos";
+			case CMD_ViewChannel:
+				return "View channel";
+			case CMD_SwitchToPopular:
+				return "Switch to popular";
+			case CMD_SwitchToTrends:
+				return "Switch to trends";
+			case SET_VideoRes:
+				return "Preferred video quality";
+			case SET_Appearance:
+				return "Appearance";
+			case SET_OtherSettings:
+				return "";
+			case SET_DownloadDir:
+				return "Download directory";
+			case SET_InvAPI:
+				return "Invidious API Instance";
+			case SET_StreamProxy:
+				return "Stream proxy server";
+			case SET_ImagesProxy:
+				return "Images proxy prefix";
+			case SET_CountryCode:
+				return "Country code (ISO 3166)";
+			case TITLE_Trends:
+				return "Trending";
+			case TITLE_Popular:
+				return "Popular";
+			case TITLE_SearchQuery:
+				return "Search query";
+			case TITLE_Settings:
+				return "Settings";
+			case BTN_LatestVideos:
+				return "Latest videos";
+			case BTN_SearchVideos:
+				return "Search videos";
+			case TITLE_Loading:
+				return "Loading";
+			case TXT_Views:
+				return "Views";
+			case TXT_LikesDislikes:
+				return "Likes / Dislikes";
+			case TXT_Published:
+				return "Published";
+			case TXT_Description:
+				return "Description";
+			case BTN_ChannelInformation:
+				return "Information";
+			case TXT_Connecting:
+				return "Connecting";
+			case TXT_Waiting:
+				return "Error! Waiting for retry...";
+			case TXT_ConnectionRetry:
+				return "Connection retry";
+			case TXT_Redirected:
+				return "Redirected";
+			case TXT_Connected:
+				return "Connected";
+			case TXT_Downloading:
+				return "Downloading";
+			case TXT_Downloaded:
+				return "Downloaded";
+			case TXT_Canceled:
+				return "Canceled";
+			case TXT_DownloadFailed:
+				return "Download failed";
+			case TXT_Initializing:
+				return "Initializing";
+			case TXT_Done:
+				return "Done";
+			case CMD_About:
+				return "About";
+			case CMD_Select:
+				return "Select";
+			case CMD_OpenPlaylist:
+				return "Open playlist";
+			case CMD_Next:
+				return "Next video";
+			case CMD_Prev:
+				return "Prev. video";
+			case SET_CustomLocaleId:
+				return "Custom locale identificator";
+			//
+			case TXT_1subscriber:
+				return "subscriber";
+			case TXT_10_1subscribers:
+				return "subscribers";
+			case TXT_subscribers:
+				return "subscribers";
+			case TXT_1video:
+				return "video";
+			case TXT_videos:
+				return "videos";
+			}
+		}
+		case 1: {
+			switch(c) {
+			case CMD_Settings:
+				return "Настройки";
+			case CMD_Search:
+				return "Поиск";
+			case CMD_OK:
+				return "OK";
+			case CMD_Cancel:
+				return "Отмена";
+			case CMD_Back:
+				return "Назад";
+			case CMD_Exit:
+				return "Выйти";
+			case CMD_Apply:
+				return "Применить";
+			case CMD_Go:
+				return "Открыть";
+			case CMD_View:
+				return "Открыть";
+			case CMD_Watch:
+				return "Смотреть";
+			case CMD_Download:
+				return "Скачать";
+			case CMD_OpenByID:
+				return "Открыть по ссылке";
+			case CMD_Open:
+				return "Открыть";
+			case CMD_Videos:
+				return "Видео";
+			case CMD_ViewChannel:
+				return "View channel";
+			case CMD_SwitchToPopular:
+				return "Сменить на популярные";
+			case CMD_SwitchToTrends:
+				return "Сменить на тренды";
+			case SET_VideoRes:
+				return "Предпочитаемое качество видео";
+			case SET_Appearance:
+				return "Внешность";
+			case SET_OtherSettings:
+				return "";
+			case SET_DownloadDir:
+				return "Папка для скачивания";
+			case SET_InvAPI:
+				return "Invidious API Instance";
+			case SET_StreamProxy:
+				return "Stream proxy server";
+			case SET_ImagesProxy:
+				return "Прокси для картинок";
+			case SET_CountryCode:
+				return "Код страны (ISO 3166)";
+			case TITLE_Trends:
+				return "Тренды";
+			case TITLE_Popular:
+				return "Популярные";
+			case TITLE_SearchQuery:
+				return "Результаты поиска";
+			case TITLE_Settings:
+				return "Настройки";
+			case BTN_LatestVideos:
+				return "Последние видео";
+			case BTN_SearchVideos:
+				return "Поиск видео";
+			case TITLE_Loading:
+				return "Загрузка";
+			case TXT_Views:
+				return "Просмотры";
+			case TXT_LikesDislikes:
+				return "Понравилось / Не понравилось";
+			case TXT_Published:
+				return "Выпущено";
+			case TXT_Description:
+				return "Описание";
+			case BTN_ChannelInformation:
+				return "Информация";
+			case TXT_Connecting:
+				return "Соединение";
+			case TXT_Waiting:
+				return "Ошибка подключения! Ожидание...";
+			case TXT_ConnectionRetry:
+				return "Повторная попытка подключения";
+			case TXT_Redirected:
+				return "Перенаправлен";
+			case TXT_Connected:
+				return "Подключен";
+			case TXT_Downloading:
+				return "Скачивание";
+			case TXT_Downloaded:
+				return "Скачано";
+			case TXT_Canceled:
+				return "Отменено";
+			case TXT_DownloadFailed:
+				return "Скачивание не удалось";
+			case TXT_Initializing:
+				return "Инициализация";
+			case TXT_Done:
+				return "Готово";
+			case CMD_About:
+				return "О программе";
+			case CMD_Select:
+				return "Выбрать";
+			case CMD_OpenPlaylist:
+				return "Откр. плейлист";
+			case CMD_Next:
+				return "След. видео";
+			case CMD_Prev:
+				return "Пред. видео";
+			case SET_CustomLocaleId:
+				return "Идентификатор польз. локализации";
+			//
+			case TXT_1subscriber:
+			case TXT_10_1subscribers:
+				return "подписчик";
+			case TXT_subscribers:
+				return "подписчиков";
+			case TXT_1video:
+			case TXT_videos:
+				return "видео";
+			}
+		}
+		}
+		//
+		return "";
 	}
 
 }

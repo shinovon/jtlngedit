@@ -1,7 +1,7 @@
 package d;
 
 // 467e300 @ r3-dev
-public class LocaleConstants {
+public interface LocaleConstants {
 	
 	public static final int CMD_Settings = 1;
 	public static final int CMD_Search = 2;
@@ -60,5 +60,8 @@ public class LocaleConstants {
 	public static final int CMD_OpenPlaylist = 54;
 	public static final int CMD_Next = 55;
 	public static final int CMD_Prev = 56;
+	public static final int SET_CustomLocaleId = 57;
+	public static final int TXT_1video = 58;
+	public static final int TXT_videos = 59;
 
 }
