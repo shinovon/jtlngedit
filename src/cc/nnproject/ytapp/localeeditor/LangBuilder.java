@@ -1,4 +1,4 @@
-package d;
+package cc.nnproject.ytapp.localeeditor;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-public class LangBuilder2 {
+public class LangBuilder {
 	
 	public static void main(String[] args) {
 		Class lc = LocaleConstants.class;

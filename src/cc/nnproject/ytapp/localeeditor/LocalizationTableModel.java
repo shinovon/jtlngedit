@@ -1,6 +1,6 @@
-package d;
+package cc.nnproject.ytapp.localeeditor;
 
-import static d.LocaleConstants.*;
+import static cc.nnproject.ytapp.localeeditor.LocaleConstants.*;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -46,10 +46,7 @@ public class LocalizationTableModel implements TableModel {
 		}
 	}
 
-	public void addTableModelListener(TableModelListener arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	public void addTableModelListener(TableModelListener arg0) {}
 
 	public Class<?> getColumnClass(int arg0) {
 		return String.class;
@@ -93,8 +90,6 @@ public class LocalizationTableModel implements TableModel {
 		values.set(rowIndex, (String) aValue);
 
 	}
-	
-
 	
 	public static String s(int c) {
 		switch(localei) {
@@ -208,6 +203,28 @@ public class LocalizationTableModel implements TableModel {
 				return "Prev. video";
 			case SET_CustomLocaleId:
 				return "Custom locale identificator";
+			case SET_CustomItems:
+				return "Better items";
+			case SET_HTTPProxy:
+				return "HTTP Proxy Streaming";
+			case SET_PreLoadRMS:
+				return "Pre-load images to RMS";
+			case SET_RememberSearch:
+				return "Remember search";
+			case SET_VideoPreviews:
+				return "Video previews";
+			case SET_SearchChannels:
+				return "Search channels";
+			case SET_SearchPlaylists:
+				return "Search playlists";
+			case SET_VQ_AudioOnly:
+				return "Audio only";
+			case SET_VQ_NoAudio:
+				return "no audio";
+			case SET_Tip1:
+				return "(Used only if http streaming is on)";
+			case SET_Tip2:
+				return "(Leave images proxy empty if HTTPS is supported)";
 			//
 			case TXT_1subscriber:
 				return "subscriber";
@@ -331,6 +348,28 @@ public class LocalizationTableModel implements TableModel {
 				return "Пред. видео";
 			case SET_CustomLocaleId:
 				return "Идентификатор польз. локализации";
+			case SET_CustomItems:
+				return "Улучшенный вид";
+			case SET_HTTPProxy:
+				return "HTTP прокси стриминг";
+			case SET_PreLoadRMS:
+				return "Предзагрузка изображений в RMS";
+			case SET_RememberSearch:
+				return "Запоминание поиска";
+			case SET_VideoPreviews:
+				return "Изображения";
+			case SET_SearchChannels:
+				return "Поиск каналов";
+			case SET_SearchPlaylists:
+				return "Поиск плейлистов";
+			case SET_VQ_AudioOnly:
+				return "Только аудио";
+			case SET_VQ_NoAudio:
+				return "без звука";
+			case SET_Tip1:
+				return "(Использован только если включен HTTP стриминг через прокси)";
+			case SET_Tip2:
+				return "(Оставьте пустым если ваше устройство поддерживает HTTPS)";
 			//
 			case TXT_1subscriber:
 			case TXT_10_1subscribers:

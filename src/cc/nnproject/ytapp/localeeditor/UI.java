@@ -1,6 +1,4 @@
-package d;
-
-import java.awt.EventQueue;
+package cc.nnproject.ytapp.localeeditor;
 
 import javax.swing.JFrame;
 import javax.swing.JTable;
@@ -15,30 +13,14 @@ import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
 
-public class sd {
+public class UI {
 
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					sd window = new sd();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	JFrame frame;
 
 	/**
 	 * Create the application.
 	 */
-	public sd() {
+	public UI() {
 		initialize();
 	}
 
@@ -47,6 +29,7 @@ public class sd {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("JTube Locale Editor v1.0 (for 1.4.0)");
 		frame.setBounds(100, 100, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -62,14 +45,14 @@ public class sd {
 		
 		panel.add(new JLabel("Author:"));
 		
-		final JTextField authorField = new JTextField("");
+		final JTextField authorField = new JTextField("me");
 		panel.add(authorField);
 		authorField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Save");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				LangBuilder2.write(idField.getText(), LocalizationTableModel.map, authorField.getText());
+				LangBuilder.write(idField.getText(), LocalizationTableModel.map, authorField.getText());
 			}
 		});
 		panel.add(btnNewButton);
