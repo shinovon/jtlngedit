@@ -5,6 +5,10 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
 import java.util.Scanner;
 
 public class LangBuilder {
@@ -24,7 +28,7 @@ public class LangBuilder {
 				System.out.print(n + "=");
 				map.put(i, in.nextLine());
         	}
-    		write(lang, map, author);
+    		write(lang, map, author, null);
 		} catch (Exception e) {
 			System.out.println();
 			e.printStackTrace();
@@ -32,9 +36,15 @@ public class LangBuilder {
     	in.close();
 	}
 
-	public static void write(String lang, Map<Integer, String> map, String author) {
+	public static void write(String lang, Map<Integer, String> map, String author, JFrame frm) {
 		try {
 			File f = new File("./jtlng." + lang.toLowerCase());
+			if(frm != null) {
+				JFileChooser fc = new JFileChooser(".");
+				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				fc.showOpenDialog(frm);
+				f = new File(fc.getSelectedFile().getAbsolutePath() + "/jtlng." + lang.toLowerCase());
+			}
 			if(f.exists())
 				f.delete();
 			f.createNewFile();

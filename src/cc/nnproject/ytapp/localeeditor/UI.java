@@ -56,7 +56,7 @@ public class UI {
 		JButton btnNewButton = new JButton("Save");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				LangBuilder.write(idField.getText(), LocalizationTableModel.map, authorField.getText());
+				LangBuilder.write(idField.getText(), LocalizationTableModel.map, authorField.getText(), frame);
 			}
 		});
 		panel.add(btnNewButton);
