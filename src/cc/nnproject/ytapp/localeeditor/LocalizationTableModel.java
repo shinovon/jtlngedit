@@ -320,6 +320,34 @@ public class LocalizationTableModel implements TableModel {
 				return "(Used only if http streaming is on)";
 			case SET_Tip2:
 				return "(Leave images proxy empty if HTTPS is supported)";
+			case BTN_Playlists:
+				return "Playlists";
+			case CMD_ShowLink:
+				return "Show link";
+			case SET_Tip3:
+				return "";
+			case SET_PlaybackMethod:
+				return "Playback method";
+			case SET_SymbianOnline:
+				return "Online (Symbian/Bada)";
+			case SET_Browser:
+				return "Via browser";
+			case SET_DownloadBuffer:
+				return "Download buffer size (bytes)";
+			case TXT_VideoDuration:
+				return "Video duration";
+			case SET_Via2yxa:
+				return "Via 2yxa.mobi";
+			case SET_CheckUpdates:
+				return "Check for updates";
+			case TXT_NewUpdateAvailable:
+				return "New update available!";
+			case CMD_Ignore:
+				return "Ignore";
+			case SET_On:
+				return "On";
+			case SET_Off:
+				return "Off";
 			//
 			case TXT_1subscriber:
 				return "subscriber";
@@ -364,7 +392,7 @@ public class LocalizationTableModel implements TableModel {
 			case CMD_Videos:
 				return "Видео";
 			case CMD_ViewChannel:
-				return "View channel";
+				return "Открыть канал";
 			case CMD_SwitchToPopular:
 				return "Сменить на популярные";
 			case CMD_SwitchToTrends:
@@ -465,6 +493,34 @@ public class LocalizationTableModel implements TableModel {
 				return "(Использован только если включен HTTP стриминг через прокси)";
 			case SET_Tip2:
 				return "(Оставьте пустым если ваше устройство поддерживает HTTPS)";
+			case BTN_Playlists:
+				return "Плейлисты";
+			case CMD_ShowLink:
+				return "Показать ссылку";
+			case SET_Tip3:
+				return "";
+			case SET_PlaybackMethod:
+				return "Способ проигрывания";
+			case SET_SymbianOnline:
+				return "Онлайн (Symbian/Bada)";
+			case SET_Browser:
+				return "Через браузер";
+			case SET_DownloadBuffer:
+				return "Размер буфера скачивания (байты)";
+			case TXT_VideoDuration:
+				return "Длительность видео";
+			case SET_Via2yxa:
+				return "Через 2yxa.mobi";
+			case SET_CheckUpdates:
+				return "Проверять наличие обновлений";
+			case TXT_NewUpdateAvailable:
+				return "Доступно новое обновление!";
+			case CMD_Ignore:
+				return "Ок";
+			case SET_On:
+				return "Вкл.";
+			case SET_Off:
+				return "Выкл.";
 			//
 			case TXT_1subscriber:
 			case TXT_10_1subscribers:
