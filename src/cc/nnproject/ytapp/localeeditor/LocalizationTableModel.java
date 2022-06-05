@@ -229,7 +229,7 @@ public class LocalizationTableModel implements TableModel {
 			case SET_Appearance:
 				return "Appearance";
 			case SET_OtherSettings:
-				return "";
+				return "Common";
 			case SET_DownloadDir:
 				return "Download directory";
 			case SET_InvAPI:
@@ -298,8 +298,6 @@ public class LocalizationTableModel implements TableModel {
 				return "Prev. video";
 			case SET_CustomLocaleId:
 				return "Custom locale identificator";
-			case SET_CustomItems:
-				return "Better items";
 			case SET_HTTPProxy:
 				return "HTTP Proxy Streaming";
 			case SET_PreLoadRMS:
@@ -325,7 +323,7 @@ public class LocalizationTableModel implements TableModel {
 			case CMD_ShowLink:
 				return "Show link";
 			case SET_Tip3:
-				return "";
+				return "(Always used for online playback, and for downloading if HTTP streaming is enabled)";
 			case SET_PlaybackMethod:
 				return "Playback method";
 			case SET_SymbianOnline:
@@ -348,6 +346,14 @@ public class LocalizationTableModel implements TableModel {
 				return "On";
 			case SET_Off:
 				return "Off";
+			case SET_IteroniProxy:
+				return "Use iteroni proxy for playback";
+			case CMD_Func:
+				return "Opts";
+			case CMD_Refresh:
+				return "Refresh";
+			case SET_Amoled:
+				return "Night theme";
 			//
 			case TXT_1subscriber:
 				return "subscriber";
@@ -359,168 +365,178 @@ public class LocalizationTableModel implements TableModel {
 				return "video";
 			case TXT_videos:
 				return "videos";
+			case TXT_1view:
+				return "view";
+			case TXT_views:
+				return "views";
 			}
 		}
 		case 1: {
 			switch(c) {
 			case CMD_Settings:
-				return "Настройки";
+				return "Settings";
 			case CMD_Search:
-				return "Поиск";
+				return "Search";
 			case CMD_OK:
 				return "OK";
 			case CMD_Cancel:
-				return "Отмена";
+				return "Cancel";
 			case CMD_Back:
-				return "Назад";
+				return "Back";
 			case CMD_Exit:
-				return "Выйти";
+				return "Exit";
 			case CMD_Apply:
-				return "Применить";
+				return "Apply";
 			case CMD_Go:
-				return "Открыть";
+				return "Go";
 			case CMD_View:
-				return "Открыть";
+				return "View";
 			case CMD_Watch:
-				return "Смотреть";
+				return "Watch";
 			case CMD_Download:
-				return "Скачать";
+				return "Download";
 			case CMD_OpenByID:
-				return "Открыть по ссылке";
+				return "Open by ID";
 			case CMD_Open:
-				return "Открыть";
+				return "Open";
 			case CMD_Videos:
-				return "Видео";
+				return "Videos";
 			case CMD_ViewChannel:
-				return "Открыть канал";
+				return "View channel";
 			case CMD_SwitchToPopular:
-				return "Сменить на популярные";
+				return "Switch to popular";
 			case CMD_SwitchToTrends:
-				return "Сменить на тренды";
+				return "Switch to trends";
 			case SET_VideoRes:
-				return "Предпочитаемое качество видео";
+				return "Preferred video quality";
 			case SET_Appearance:
-				return "Внешность";
+				return "Appearance";
 			case SET_OtherSettings:
-				return "";
+				return "Common";
 			case SET_DownloadDir:
-				return "Папка для скачивания";
+				return "Download directory";
 			case SET_InvAPI:
 				return "Invidious API Instance";
 			case SET_StreamProxy:
 				return "Stream proxy server";
 			case SET_ImagesProxy:
-				return "Прокси для картинок";
+				return "Images proxy prefix";
 			case SET_CountryCode:
-				return "Код страны (ISO 3166)";
+				return "Country code (ISO 3166)";
 			case TITLE_Trends:
-				return "Тренды";
+				return "Trending";
 			case TITLE_Popular:
-				return "Популярные";
+				return "Popular";
 			case TITLE_SearchQuery:
-				return "Результаты поиска";
+				return "Search query";
 			case TITLE_Settings:
-				return "Настройки";
+				return "Settings";
 			case BTN_LatestVideos:
-				return "Последние видео";
+				return "Latest videos";
 			case BTN_SearchVideos:
-				return "Поиск видео";
+				return "Search videos";
 			case TITLE_Loading:
-				return "Загрузка";
+				return "Loading";
 			case TXT_Views:
-				return "Просмотры";
+				return "Views";
 			case TXT_LikesDislikes:
-				return "Понравилось / Не понравилось";
+				return "Likes / Dislikes";
 			case TXT_Published:
-				return "Выпущено";
+				return "Published";
 			case TXT_Description:
-				return "Описание";
+				return "Description";
 			case BTN_ChannelInformation:
-				return "Информация";
+				return "Information";
 			case TXT_Connecting:
-				return "Соединение";
+				return "Connecting";
 			case TXT_Waiting:
-				return "Ошибка подключения! Ожидание...";
+				return "Error! Waiting for retry...";
 			case TXT_ConnectionRetry:
-				return "Повторная попытка подключения";
+				return "Connection retry";
 			case TXT_Redirected:
-				return "Перенаправлен";
+				return "Redirected";
 			case TXT_Connected:
-				return "Подключен";
+				return "Connected";
 			case TXT_Downloading:
-				return "Скачивание";
+				return "Downloading";
 			case TXT_Downloaded:
-				return "Скачано";
+				return "Downloaded";
 			case TXT_Canceled:
-				return "Отменено";
+				return "Canceled";
 			case TXT_DownloadFailed:
-				return "Скачивание не удалось";
+				return "Download failed";
 			case TXT_Initializing:
-				return "Инициализация";
+				return "Initializing";
 			case TXT_Done:
-				return "Готово";
+				return "Done";
 			case CMD_About:
-				return "О программе";
+				return "About";
 			case CMD_Select:
-				return "Выбрать";
+				return "Select";
 			case CMD_OpenPlaylist:
-				return "Откр. плейлист";
+				return "Open playlist";
 			case CMD_Next:
-				return "След. видео";
+				return "Next video";
 			case CMD_Prev:
-				return "Пред. видео";
+				return "Prev. video";
 			case SET_CustomLocaleId:
-				return "Идентификатор польз. локализации";
-			case SET_CustomItems:
-				return "Улучшенный вид";
+				return "Custom locale identificator";
 			case SET_HTTPProxy:
-				return "HTTP прокси стриминг";
+				return "HTTP Proxy Streaming";
 			case SET_PreLoadRMS:
-				return "Предзагрузка изображений в RMS";
+				return "Pre-load images to RMS";
 			case SET_RememberSearch:
-				return "Запоминание поиска";
+				return "Remember search";
 			case SET_VideoPreviews:
-				return "Изображения";
+				return "Video previews";
 			case SET_SearchChannels:
-				return "Поиск каналов";
+				return "Search channels";
 			case SET_SearchPlaylists:
-				return "Поиск плейлистов";
+				return "Search playlists";
 			case SET_VQ_AudioOnly:
-				return "Только аудио";
+				return "Audio only";
 			case SET_VQ_NoAudio:
-				return "без звука";
+				return "no audio";
 			case SET_Tip1:
-				return "(Использован только если включен HTTP стриминг через прокси)";
+				return "(Used only if http streaming is on)";
 			case SET_Tip2:
-				return "(Оставьте пустым если ваше устройство поддерживает HTTPS)";
+				return "(Leave images proxy empty if HTTPS is supported)";
 			case BTN_Playlists:
-				return "Плейлисты";
+				return "Playlists";
 			case CMD_ShowLink:
-				return "Показать ссылку";
+				return "Show link";
 			case SET_Tip3:
-				return "";
+				return "(Always used for online playback, and for downloading if HTTP streaming is enabled)";
 			case SET_PlaybackMethod:
-				return "Способ проигрывания";
+				return "Playback method";
 			case SET_SymbianOnline:
-				return "Онлайн (Symbian/Bada)";
+				return "Online (Symbian/Bada)";
 			case SET_Browser:
-				return "Через браузер";
+				return "Via browser";
 			case SET_DownloadBuffer:
-				return "Размер буфера скачивания (байты)";
+				return "Download buffer size (bytes)";
 			case TXT_VideoDuration:
-				return "Длительность видео";
+				return "Video duration";
 			case SET_Via2yxa:
-				return "Через 2yxa.mobi";
+				return "Via 2yxa.mobi";
 			case SET_CheckUpdates:
-				return "Проверять наличие обновлений";
+				return "Check for updates";
 			case TXT_NewUpdateAvailable:
-				return "Доступно новое обновление!";
+				return "New update available!";
 			case CMD_Ignore:
-				return "Ок";
+				return "Ignore";
 			case SET_On:
-				return "Вкл.";
+				return "On";
 			case SET_Off:
-				return "Выкл.";
+				return "Off";
+			case SET_IteroniProxy:
+				return "Use iteroni proxy for playback";
+			case CMD_Func:
+				return "Opts";
+			case CMD_Refresh:
+				return "Refresh";
+			case SET_Amoled:
+				return "Night theme";
 			//
 			case TXT_1subscriber:
 			case TXT_10_1subscribers:
@@ -530,6 +546,10 @@ public class LocalizationTableModel implements TableModel {
 			case TXT_1video:
 			case TXT_videos:
 				return "видео";
+			case TXT_1view:
+				return "просмотр";
+			case TXT_views:
+				return "просмотров";
 			}
 		}
 		}
