@@ -33,7 +33,7 @@ public class UI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("JTube Locale Editor v1.0.5 (for 2.0.2)");
+		frame.setTitle("JTube Locale Editor v1.0.6 (for 2.1.1)");
 		frame.setBounds(100, 100, 700, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

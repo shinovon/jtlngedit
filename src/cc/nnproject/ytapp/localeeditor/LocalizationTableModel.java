@@ -116,7 +116,7 @@ public class LocalizationTableModel implements TableModel {
 			try {
 				int i;
 				boolean a = false;
-				while( (i = d.readShort()) != -1) {
+				while((i = d.readShort()) != -1) {
 					String s = d.readUTF();
 					if(i == 0 && !a) {
 						ui.authorField.setText(s);
@@ -138,48 +138,36 @@ public class LocalizationTableModel implements TableModel {
 		ui.table.setModel(new TableModel() {
 
 			public void addTableModelListener(TableModelListener arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 
 			public Class<?> getColumnClass(int arg0) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			public int getColumnCount() {
-				// TODO Auto-generated method stub
 				return 0;
 			}
 
 			public String getColumnName(int arg0) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			public int getRowCount() {
-				// TODO Auto-generated method stub
 				return 0;
 			}
 
 			public Object getValueAt(int arg0, int arg1) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			public boolean isCellEditable(int arg0, int arg1) {
-				// TODO Auto-generated method stub
 				return false;
 			}
 
 			public void removeTableModelListener(TableModelListener arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 
 			public void setValueAt(Object arg0, int arg1, int arg2) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 		});
@@ -354,7 +342,19 @@ public class LocalizationTableModel implements TableModel {
 				return "Refresh";
 			case SET_Amoled:
 				return "Night theme";
-			//
+			case SET_SmallPreviews:
+				return "Small previews";
+			case SET_Reset:
+				return "Reset settings";
+			case SET_Video:
+				return "Video";
+			case SET_Network:
+				return "Network";
+			case TXT_SearchHint:
+				return "Search..";
+			case SET_AutoStart:
+				return "Auto-start from other applications";
+			// Numbers
 			case TXT_1subscriber:
 				return "subscriber";
 			case TXT_10_1subscribers:
@@ -369,6 +369,31 @@ public class LocalizationTableModel implements TableModel {
 				return "view";
 			case TXT_views:
 				return "views";
+			// Dates
+			case DATE_YearAgo:
+				return "year ago";
+			case DATE_YearsAgo:
+				return "years ago";
+			case DATE_MonthAgo:
+				return "month ago";
+			case DATE_MonthsAgo:
+				return "months ago";
+			case DATE_WeekAgo:
+				return "week ago";
+			case DATE_WeeksAgo:
+				return "weeks ago";
+			case DATE_DayAgo:
+				return "day ago";
+			case DATE_DaysAgo:
+				return "days ago";
+			case DATE_HourAgo:
+				return "hour ago";
+			case DATE_HoursAgo:
+				return "hours ago";
+			case DATE_MinuteAgo:
+				return "minute ago";
+			case DATE_MinutesAgo:
+				return "minutes ago";
 			}
 		}
 		case 1: {
@@ -537,7 +562,19 @@ public class LocalizationTableModel implements TableModel {
 				return "Refresh";
 			case SET_Amoled:
 				return "Night theme";
-			//
+			case SET_SmallPreviews:
+				return "Маленькие превью";
+			case SET_Reset:
+				return "Сбросить настройки";
+			case SET_Video:
+				return "Видео";
+			case SET_Network:
+				return "Сеть";
+			case TXT_SearchHint:
+				return "Поиск..";
+			case SET_AutoStart:
+				return "Авто-старт из других приложений";
+			// Numbers
 			case TXT_1subscriber:
 			case TXT_10_1subscribers:
 				return "подписчик";
@@ -550,6 +587,31 @@ public class LocalizationTableModel implements TableModel {
 				return "просмотр";
 			case TXT_views:
 				return "просмотров";
+			// Dates
+			case DATE_YearAgo:
+				return "year ago";
+			case DATE_YearsAgo:
+				return "years ago";
+			case DATE_MonthAgo:
+				return "month ago";
+			case DATE_MonthsAgo:
+				return "months ago";
+			case DATE_WeekAgo:
+				return "week ago";
+			case DATE_WeeksAgo:
+				return "weeks ago";
+			case DATE_DayAgo:
+				return "day ago";
+			case DATE_DaysAgo:
+				return "days ago";
+			case DATE_HourAgo:
+				return "hour ago";
+			case DATE_HoursAgo:
+				return "hours ago";
+			case DATE_MinuteAgo:
+				return "minute ago";
+			case DATE_MinutesAgo:
+				return "minutes ago";
 			}
 		}
 		}
