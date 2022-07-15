@@ -1,17 +1,11 @@
 package cc.nnproject.ytapp.localeeditor;
 
-import javax.swing.JFrame;
-import javax.swing.JTable;
 import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-
-import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
+import javax.swing.*;
+import javax.swing.UIManager.LookAndFeelInfo;
 
 public class UI {
 
@@ -20,6 +14,8 @@ public class UI {
 	JTextField authorField;
 	JTable table;
 	private LocalizationTableModel model;
+	private JLabel lblNewLabel;
+	private JComboBox<String> comboBox;
 
 	/**
 	 * Create the application.
@@ -32,6 +28,17 @@ public class UI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		/*
+		try {
+			for(LookAndFeelInfo i: UIManager.getInstalledLookAndFeels()) {
+				if(i.getClassName().contains("Nimbus")) {
+					UIManager.setLookAndFeel(i.getClassName());
+					break;
+				}
+			}
+		} catch (Exception e) {
+		}
+		*/
 		frame = new JFrame();
 		frame.setTitle("JTube Locale Editor v1.0.6 (for 2.1.1)");
 		frame.setBounds(100, 100, 700, 500);
@@ -67,6 +74,21 @@ public class UI {
 			}
 		});
 		panel.add(btnLoad);
+		
+		lblNewLabel = new JLabel("Preset:");
+		panel.add(lblNewLabel);
+		
+		comboBox = new JComboBox<String>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"en", "ru"}));
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(JOptionPane.showConfirmDialog(new JFrame(), "You may lose your changes, proceed?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE) != JOptionPane.YES_OPTION)
+					return;
+				LocalizationTableModel.localei = comboBox.getSelectedIndex();
+				model.init(UI.this);
+			}
+		});
+		panel.add(comboBox);
 		JButton btnLoadv1 = new JButton("Load v1");
 		btnLoadv1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
