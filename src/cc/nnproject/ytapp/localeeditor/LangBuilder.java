@@ -38,12 +38,12 @@ public class LangBuilder {
 
 	public static void write(String lang, Map<Integer, String> map, String author, JFrame frm) {
 		try {
-			File f = new File("./jtlng." + lang.toLowerCase());
+			File f = new File("./jtlng_" + lang.toLowerCase());
 			if(frm != null) {
 				JFileChooser fc = new JFileChooser(".");
 				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				fc.showOpenDialog(frm);
-				f = new File(fc.getSelectedFile().getAbsolutePath() + "/jtlng." + lang.toLowerCase());
+				f = new File(fc.getSelectedFile().getAbsolutePath() + "/jtlng_" + lang.toLowerCase());
 			}
 			if(f.exists())
 				f.delete();

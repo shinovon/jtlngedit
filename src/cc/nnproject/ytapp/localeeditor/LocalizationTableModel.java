@@ -103,7 +103,7 @@ public class LocalizationTableModel implements TableModel {
 		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		fc.setFileFilter(new FileFilter() {
 			public boolean accept(File f) {
-		        return f.isDirectory() || f.getName().startsWith("jtlng.");
+		        return f.isDirectory() || f.getName().startsWith("jtlng_");
 		    }
 
 			public String getDescription() {
@@ -120,7 +120,7 @@ public class LocalizationTableModel implements TableModel {
 			
 			FileInputStream is = new FileInputStream(f);
 			DataInputStream d = new DataInputStream(is);
-			ui.idField.setText(f.getName().substring("jtlng.".length()));
+			ui.idField.setText(f.getName().substring("jtlng_".length()));
 			try {
 				int i;
 				boolean a = false;
@@ -191,6 +191,8 @@ public class LocalizationTableModel implements TableModel {
 		switch(localei) {
 		case 0: {
 			switch(c) {
+			case ISOLanguageCode:
+				return "en-US";
 			case CMD_Settings:
 				return "Settings";
 			case CMD_Search:
@@ -367,6 +369,10 @@ public class LocalizationTableModel implements TableModel {
 				return "Search..";
 			case SET_AutoStart:
 				return "Auto-start from other applications";
+			case BTN_Share:
+				return "Share";
+			case SET_ChooseLanguage:
+				return "Choose language";
 			// Numbers
 			case TXT_1subscriber:
 				return "subscriber";
@@ -382,35 +388,12 @@ public class LocalizationTableModel implements TableModel {
 				return "view";
 			case TXT_views:
 				return "views";
-			// Dates
-			case DATE_YearAgo:
-				return "year ago";
-			case DATE_YearsAgo:
-				return "years ago";
-			case DATE_MonthAgo:
-				return "month ago";
-			case DATE_MonthsAgo:
-				return "months ago";
-			case DATE_WeekAgo:
-				return "week ago";
-			case DATE_WeeksAgo:
-				return "weeks ago";
-			case DATE_DayAgo:
-				return "day ago";
-			case DATE_DaysAgo:
-				return "days ago";
-			case DATE_HourAgo:
-				return "hour ago";
-			case DATE_HoursAgo:
-				return "hours ago";
-			case DATE_MinuteAgo:
-				return "minute ago";
-			case DATE_MinutesAgo:
-				return "minutes ago";
 			}
 		}
 		case 1: {
 			switch(c) {
+			case ISOLanguageCode:
+				return "ru-RU";
 			case CMD_Settings:
 				return "Настройки";
 			case CMD_Search:
@@ -587,6 +570,10 @@ public class LocalizationTableModel implements TableModel {
 				return "Поиск..";
 			case SET_AutoStart:
 				return "Авто-старт из других приложений";
+			case BTN_Share:
+				return "Поделиться";
+			case SET_ChooseLanguage:
+				return "Выбрать язык";
 			// Numbers
 			case TXT_1subscriber:
 			case TXT_10_1subscribers:
@@ -600,31 +587,6 @@ public class LocalizationTableModel implements TableModel {
 				return "просмотр";
 			case TXT_views:
 				return "просмотров";
-			// Dates
-			case DATE_YearAgo:
-				return "year ago";
-			case DATE_YearsAgo:
-				return "years ago";
-			case DATE_MonthAgo:
-				return "month ago";
-			case DATE_MonthsAgo:
-				return "months ago";
-			case DATE_WeekAgo:
-				return "week ago";
-			case DATE_WeeksAgo:
-				return "weeks ago";
-			case DATE_DayAgo:
-				return "day ago";
-			case DATE_DaysAgo:
-				return "days ago";
-			case DATE_HourAgo:
-				return "hour ago";
-			case DATE_HoursAgo:
-				return "hours ago";
-			case DATE_MinuteAgo:
-				return "minute ago";
-			case DATE_MinutesAgo:
-				return "minutes ago";
 			}
 		}
 		}
