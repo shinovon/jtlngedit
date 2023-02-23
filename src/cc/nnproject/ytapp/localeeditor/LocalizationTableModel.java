@@ -232,7 +232,7 @@ public class LocalizationTableModel implements TableModel {
 			case SET_Appearance:
 				return "Appearance";
 			case SET_OtherSettings:
-				return "Common";
+				return "Misc";
 			case SET_DownloadDir:
 				return "Download directory";
 			case SET_InvAPI:
@@ -352,7 +352,7 @@ public class LocalizationTableModel implements TableModel {
 			case SET_IteroniProxy:
 				return "Use iteroni proxy for playback";
 			case CMD_Func:
-				return "Opts";
+				return "Options";
 			case CMD_Refresh:
 				return "Refresh";
 			case SET_Amoled:
@@ -373,6 +373,22 @@ public class LocalizationTableModel implements TableModel {
 				return "Share";
 			case SET_ChooseLanguage:
 				return "Choose language";
+			case SET_FullScreenMode:
+				return "Full-Screen mode";
+			case CMD_FuncMenu:
+				return "Menu";
+			case SET_Input:
+				return "Input";
+			case SET_VirtualKeyboard:
+				return "Keyboard";
+			case SET_NokiaUI:
+				return "NokiaUI (if available)";
+			case SET_FullScreenInput:
+				return "Fullscreen input";
+			case SET_InputLanguages:
+				return "Input languages";
+			case SET_j2mekeyboardSettings:
+				return "j2mekeyboard settings";
 			// Numbers
 			case TXT_1subscriber:
 				return "subscriber";
@@ -433,7 +449,7 @@ public class LocalizationTableModel implements TableModel {
 			case SET_Appearance:
 				return "Внешность";
 			case SET_OtherSettings:
-				return "Настройки приложения";
+				return "Прочие настройки";
 			case SET_DownloadDir:
 				return "Папка для скачивания";
 			case SET_InvAPI:
@@ -553,7 +569,7 @@ public class LocalizationTableModel implements TableModel {
 			case SET_IteroniProxy:
 				return "Прокси iteroni для проигрывания";
 			case CMD_Func:
-				return "Меню";
+				return "Функции";
 			case CMD_Refresh:
 				return "Обновить";
 			case SET_Amoled:
@@ -574,6 +590,22 @@ public class LocalizationTableModel implements TableModel {
 				return "Поделиться";
 			case SET_ChooseLanguage:
 				return "Выбрать язык";
+			case SET_FullScreenMode:
+				return "Полноэкранный режим";
+			case CMD_FuncMenu:
+				return "Меню";
+			case SET_Input:
+				return "Ввод";
+			case SET_VirtualKeyboard:
+				return "Клавиатура";
+			case SET_NokiaUI:
+				return "NokiaUI (если имеется)";
+			case SET_FullScreenInput:
+				return "Полноэкранный ввод";
+			case SET_InputLanguages:
+				return "Языки ввода";
+			case SET_j2mekeyboardSettings:
+				return "Настройки j2mekeyboard";
 			// Numbers
 			case TXT_1subscriber:
 			case TXT_10_1subscribers:
