@@ -40,7 +40,7 @@ public class UI {
 		}
 		*/
 		frame = new JFrame();
-		frame.setTitle("JTube Locale Editor v2.2.0");
+		frame.setTitle("JTube Locale Editor v2.3.2");
 		frame.setBounds(100, 100, 700, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
